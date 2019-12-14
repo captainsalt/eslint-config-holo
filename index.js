@@ -184,7 +184,7 @@ const base = {
 	'no-mixed-spaces-and-tabs': [2, 'smart-tabs'],
 	'no-multi-assign': 1,
 	'no-multiple-empty-lines': 2,
-	'no-negated-condition': 2,
+	'no-negated-condition': 1,
 	'no-nested-ternary': 0,
 	'no-new-object': 2,
 	'no-plusplus': 0,
