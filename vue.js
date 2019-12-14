@@ -16,9 +16,8 @@ module.exports = {
 			1,
 			{
 				singleline: 'never',
-				multiline: 'never',
+				multiline: 'always',
 			},
 		],
-		'vue/attributes-hyphenation': 0,
 	},
 };
