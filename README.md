@@ -5,7 +5,7 @@
 	<p>
 		<a href="https://www.npmjs.com/package/eslint-config-holo"><img src="https://img.shields.io/npm/v/eslint-config-holo.svg?maxAge=3600" alt="NPM version" /></a>
 		<a href="https://www.npmjs.com/package/eslint-config-holo"><img src="https://img.shields.io/npm/dt/eslint-config-holo.svg?maxAge=3600" alt="NPM downloads" /></a>
-		<a href="https://david-dm.org/iCrawl/eslint-config-holo"><img src="https://david-dm.org/iCrawl/eslint-config-holo/status.svg?maxAge=3600" alt="Dependencies" /></a>
+		<a href="https://david-dm.org/captainsalt/eslint-config-holo"><img src="https://david-dm.org/captainsalt/eslint-config-holo/status.svg?maxAge=3600" alt="Dependencies" /></a>
 	</p>
 	<p>
 		<a href="https://nodei.co/npm/eslint-config-holo/"><img src="https://nodei.co/npm/eslint-config-holo.png?downloads=true&stars=true" alt="NPM info" /></a>
