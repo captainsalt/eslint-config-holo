@@ -206,7 +206,7 @@ const base = {
 	'padded-blocks': [2, 'never'],
 	'padding-line-between-statements': 0,
 	'quote-props': [2, 'consistent-as-needed', { keywords: true, unnecessary: true, numbers: false }],
-	quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+	quotes: [2, 'double', { avoidEscape: true, allowTemplateLiterals: true }],
 	'require-jsdoc': 0,
 	semi: [2, 'always', { omitLastInOneLineBlock: false }],
 	'semi-spacing': [2, { before: false, after: true }],
