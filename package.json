@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-holo",
-	"version": "7.1.2",
+	"version": "1.0.1",
 	"description": "ESLint shareable config",
 	"main": "index.js",
 	"author": {

@@ -10,7 +10,7 @@ module.exports = {
 		browser: true,
 	},
 	rules: {
-		'vue/html-indent': [2, 'tab'],
+		'vue/html-indent': [2, 2],
 		'vue/max-attributes-per-line': 0,
 		'vue/html-closing-bracket-newline': [
 			1,
