@@ -5,8 +5,8 @@ module.exports = {
 			2,
 			{
 				printWidth: 120,
-				useTabs: true,
-				singleQuote: true,
+				useTabs: false,
+				singleQuote: false,
 				quoteProps: 'as-needed',
 				trailingComma: 'all',
 				endOfLine: 'lf',
