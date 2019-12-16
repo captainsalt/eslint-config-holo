@@ -3,11 +3,11 @@ const path = require("path");
 module.exports = {
   parser: "vue-eslint-parser",
   parserOptions: {
-    parser: "babel-eslint",
+    parser: "babel-eslint"
   },
   extends: ["plugin:vue/recommended", path.join(__dirname, "index.js")],
   env: {
-    browser: true,
+    browser: true
   },
   rules: {
     "vue/html-indent": [2, 2],
@@ -16,8 +16,16 @@ module.exports = {
       1,
       {
         singleline: "never",
-        multiline: "always",
-      },
+        multiline: "always"
+      }
     ],
-  },
+    "vue/html-closing-bracket-spacing": [
+      1,
+      {
+        startTag: "never",
+        endTag: "never",
+        selfClosingTag: "never"
+      }
+    ]
+  }
 };
