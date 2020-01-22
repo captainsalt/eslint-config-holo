@@ -156,7 +156,7 @@ const base = {
   "id-blacklist": 0,
   "id-length": 0,
   "id-match": 0,
-  indent: [1, 2],
+  indent: [1, 2, { SwitchCase: 1 }],
   "jsx-quotes": [1, "prefer-double"],
   "key-spacing": [1, { beforeColon: false, afterColon: true, mode: "strict" }],
   "keyword-spacing": [1, { before: true, after: true }],
