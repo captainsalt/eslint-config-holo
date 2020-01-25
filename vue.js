@@ -11,7 +11,7 @@ module.exports = {
   },
   rules: {
     "vue/html-indent": [1, 2],
-    "vue/max-attributes-per-line": 0,
+    "vue/max-attributes-per-line": [1, { singleline: 1 }],
     "vue/html-closing-bracket-newline": [
       1,
       {
