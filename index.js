@@ -161,7 +161,7 @@ const base = {
   "key-spacing": [1, { beforeColon: false, afterColon: true, mode: "strict" }],
   "keyword-spacing": [1, { before: true, after: true }],
   "line-comment-position": 0,
-  "linebreak-style": [1, "windows"],
+  "linebreak-style": [1, "unix"],
   "lines-around-comment": 0,
   "lines-between-class-members": [1, "always", { exceptAfterSingleLine: true }],
   "max-depth": 0,
