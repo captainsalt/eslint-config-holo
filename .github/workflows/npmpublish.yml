@@ -6,33 +6,8 @@ name: Node.js Package
 on:
   release:
     types: [created]
-  push:
-    branches: 
-      - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          persist-credentials: false
-          fetch-depth: 0
-      - run: npm ci
-      - run: npm test
-      - name: Patch package version
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          npm version patch
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest

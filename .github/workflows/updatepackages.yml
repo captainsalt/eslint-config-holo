@@ -1,0 +1,40 @@
+name: Node.js Package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          persist-credentials: false
+          fetch-depth: 0
+      - run: npm ci
+      - run: npm test
+      - name: Patch package version
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          npm version patch
+          git tag v$(npm show . version)
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      - name: GitHub release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          tags: true
+          
