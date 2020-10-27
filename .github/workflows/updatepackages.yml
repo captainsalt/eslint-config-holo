@@ -10,14 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          persist-credentials: false
-          fetch-depth: 0
-      - run: npm ci
-      - run: npm test
-
+  
       - name: Patch package version
         run: |
           git config user.name "GitHub Action"
@@ -25,8 +24,10 @@ jobs:
           npm version patch
 
       - name: Save version to ENV
-        run: echo "release_tag=v$(npm show . verson)" >> $GITHUB_ENV
-        
+        run: |
+          version=`npm show . version`
+          echo "tag=v$version" >> $GITHUB_ENV
+
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
@@ -39,5 +40,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.release_tag }}
-          release_name: Release v${{ github.release_tag }}
+          tag_name: ${{ env.tag }}
+          release_name: Release ${{ env.tag }}
