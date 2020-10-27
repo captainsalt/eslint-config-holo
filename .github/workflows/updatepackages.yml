@@ -26,6 +26,7 @@ jobs:
       - name: Save version to ENV
         run: |
           version=`npm show . version`
+          echo $version
           echo "tag=v$version" >> $GITHUB_ENV
 
       - name: Push changes
