@@ -22,7 +22,7 @@ jobs:
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           version=`npm version patch`
-          echo "tag=v$version" >> $GITHUB_ENV
+          echo "tag=$version" >> $GITHUB_ENV
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
