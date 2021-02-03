@@ -49,25 +49,3 @@ jobs:
         with:
           tag_name: ${{ env.tag }}
           release_name: Release ${{ env.tag }}
-
-  publish-npm:
-    needs: [build, check-diff]
-    if: needs.check-diff.outputs.diff != ''
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-
-      - run: npm ci
-
-      - run: |
-          git config user.name "GitHub Action"
-          git config user.email "action@github.com"
-          npm version patch
-
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
