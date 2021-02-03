@@ -11,6 +11,11 @@ jobs:
     outputs:
       diff: ${{ steps.git-status.outputs.diff }}
     steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
       - id: git-status
         run: echo "::set-output name=diff::`git status --short`"
 
